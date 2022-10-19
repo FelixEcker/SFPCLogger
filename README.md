@@ -44,3 +44,10 @@ Information Message: LOG_LVL_INF
 Warning Message: LOG_LVL_WARN
 Error Message: LOG_LVL_ERR
 ```
+
+## Logger Settings
+### Date Time Format
+On creation, the default Format-Settings are copied to be used by the logger. The Format Settings of the Logger are stored in the `FLoggerFormatSettings` variable an can be modified.
+
+### "Silent" mode
+Silent mode can be toggled by modifying the `FSilent` field. If the logger is in silent mode, it will only write to its Log file (if set up).
