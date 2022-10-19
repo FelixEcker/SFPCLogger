@@ -1,5 +1,4 @@
-{$mode objfpc}
-unit uLogger;
+unit uDelphiLogger;
 
 {        uLogger - Simple Logger for Object FPC.          }
 {                                                         }
@@ -67,7 +66,7 @@ interface
 implementation
     constructor TLogger.Create;
     begin
-        FLoggerFormatSettings := DefaultFormatSettings;
+        FLoggerFormatSettings := FormatSettings;
         
         FSaveToFile := False;
         FSilent := False;
