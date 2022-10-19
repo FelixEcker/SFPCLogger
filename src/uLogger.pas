@@ -102,10 +102,10 @@ implementation
         if (FLoggerName <> '') then msg := msg + FLoggerName + ' ';
 
         case ALogLevel of
-            LOG_LVL_DBG: msg :=  msg + '[DEBUG]  ';
+            LOG_LVL_DBG: msg :=  msg + '[DEBUG] ';
             LOG_LVL_INF: msg :=  msg + '[INFO] ';
             LOG_LVL_WARN: msg := msg + '[WARN] ';
-            LOG_LVL_ERR: msg :=  msg + '[ERROR]  ';
+            LOG_LVL_ERR: msg :=  msg + '[ERROR] ';
         end;
 
         msg := msg+AMsg;
