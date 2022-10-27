@@ -40,9 +40,11 @@ end.
 ## Log Level Constants
 ```
 Debug Message: LOG_LVL_DBG
+Notification: LOG_LVL_NOTICE
 Information Message: LOG_LVL_INF
 Warning Message: LOG_LVL_WARN
 Error Message: LOG_LVL_ERR
+Fatality Message: LOGL_LVL_FATAL
 ```
 
 ## Logger Settings
