@@ -1,6 +1,6 @@
 unit uDelphiLogger;
 
-{        uLogger - Simple Logger for Object FPC.          }
+{    uDelphiLogger - Simple Logger for OBJFPC/Delphi.     }
 {                                                         }
 { Usage:                                                  }
 {    // NO SAVING                                         }
@@ -55,15 +55,22 @@ interface
     { Debug Message }
     LOG_LVL_DBG = 0;
 
-    { Information Message }
-    LOG_LVL_INF = 1;
+    { Noification Message }
+    LOG_LVL_NOTICE = 1;
 
-    { Warning Message }
-    LOG_LVL_WARN = 2;
+    { Information Message }
+    LOG_LVL_INF = 2;
+
+    { Warning Message } 
+    LOG_LVL_WARN = 3;
 
     { Error Message }
-    LOG_LVL_ERR = 3;
+    LOG_LVL_ERR = 4;
 
+    { Fatal Error Message }
+    LOG_LVL_FATAL = 5;
+
+    LOG_LVL_NAMES: array of string = ['DEBUG', 'NOTICE', 'INFO', 'WARN', 'ERROR', 'FATAL'];
 implementation
   constructor TLogger.Create;
   begin
@@ -101,14 +108,7 @@ implementation
 
     if (FLoggerName <> '') then msg := msg + FLoggerName + ' ';
 
-    case ALogLevel of
-      LOG_LVL_DBG: msg :=  msg + '[DEBUG] ';
-      LOG_LVL_INF: msg :=  msg + '[INFO] ';
-      LOG_LVL_WARN: msg := msg + '[WARN] ';
-      LOG_LVL_ERR: msg :=  msg + '[ERROR] ';
-    end;
-
-    msg := msg+AMsg;
+    msg := msg + '[' + LOG_LVL_NAMES[ALogLevel] + '] ' + AMsg;
     if not FSilent then writeln(msg);
     if (FSaveToFile) then writeln(FLogFile, msg+AMsg);
   end;
