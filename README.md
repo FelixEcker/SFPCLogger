@@ -1,5 +1,5 @@
 # SFPCLogger
-A simple OBJFPC Logger
+A simple, delphi compatible, Logging Unit.
 
 ## Usage
 Simply add the `uLogger.pas` Unit from the `src` directory to your project's source files. Below are two examples of how
