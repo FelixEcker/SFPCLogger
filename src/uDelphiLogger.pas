@@ -1,4 +1,7 @@
-unit uDelphiLogger;
+{$ifndef dcc}
+  {$mode delphi}
+{$endif}
+unit uDelphiLogger deprecated;
 
 {    uDelphiLogger - Simple Logger for OBJFPC/Delphi.     }
 {                                                         }
@@ -48,7 +51,7 @@ interface
         destructor Free;
         procedure LogF(const ALogLevel: Integer; const AMsg: String; const AArgs: array of const);
         procedure Log(const ALogLevel: Integer; const AMsg: String);
-      end;
+      end deprecated;
 
   const
     {   LOG LEVELS   }

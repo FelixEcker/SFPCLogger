@@ -1,4 +1,6 @@
-{$mode objfpc}
+{$ifndef dcc}
+  {$mode delphi}
+{$endif}
 unit uLogger;
 
 {        uLogger - Simple Logger for Object FPC.          }
@@ -71,7 +73,7 @@ interface
     { Fatal Error Message }
     LOG_LVL_FATAL = 5;
 
-    LOG_LVL_NAMES: array of string = ('DEBUG', 'NOTICE', 'INFO', 'WARN', 'ERROR', 'FATAL');
+    LOG_LVL_NAMES : array of String = ['DEBUG', 'NOTICE', 'INFO', 'WARN', 'ERROR', 'FATAL'];
 implementation
   constructor TLogger.Create;
   begin

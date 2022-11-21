@@ -1,6 +1,6 @@
 program test;
 
-uses uLogger;
+uses uDelphiLogger;
 
 var
 	logger: TLogger;
