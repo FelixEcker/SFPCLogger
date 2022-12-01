@@ -46,6 +46,7 @@ interface
         FLoggerFormatSettings: TFormatSettings;
         FLoggerName: String;
         FSilent: Boolean;
+        FLastMsg: String;
         constructor Create; overload;
         constructor Create(const ALogFile: String); overload;
         destructor Free;
@@ -117,6 +118,7 @@ implementation
 
     msg := msg + '[' + LOG_LVL_NAMES[ALogLevel] + '] ' + AMsg;
     if not FSilent then writeln(msg);
-    if (FSaveToFile) then writeln(FLogFile, msg+AMsg);
+    if (FSaveToFile) then writeln(FLogFile, msg);
+    FLastMsg := msg;
   end;
 end.
