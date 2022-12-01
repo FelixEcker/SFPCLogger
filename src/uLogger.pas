@@ -77,8 +77,12 @@ interface
 implementation
   constructor TLogger.Create;
   begin
-    FLoggerFormatSettings := DefaultFormatSettings;
-    
+    {$ifdef dcc}
+      FLoggerFormatSettings.ShortDateFormat := FormatSettings;
+    {$else}
+      FLoggerFormatSettings := DefaultFormatSettings;
+    {$endif}
+
     FSaveToFile := False;
     FSilent := False;
     FLoggerName := '';
