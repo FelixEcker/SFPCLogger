@@ -78,7 +78,7 @@ implementation
   constructor TLogger.Create;
   begin
     {$ifdef dcc}
-      FLoggerFormatSettings.ShortDateFormat := FormatSettings;
+      FLoggerFormatSettings := FormatSettings;
     {$else}
       FLoggerFormatSettings := DefaultFormatSettings;
     {$endif}
